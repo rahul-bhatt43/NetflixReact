@@ -1,0 +1,130 @@
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content.movieInfo {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}
+
+.infoContainer {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-position: center;
+    background-size: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+.infoContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background: linear-gradient(90deg, black, rgba(0, 0, 0, 0.5));
+
+    z-index: 1;
+}
+
+.infoContainer .leftImg {
+    width: 30%;
+    display: grid;
+    place-content: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.infoContainer .leftImg img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+    transition: .3s all linear;
+}
+
+.infoContainer .rightInfo {
+    width: 65%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.infoContainer .rightInfo .overview {
+    max-width: 80%;
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infoContainer .rightInfo .overview h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.infoContainer .rightInfo .overview p {
+    line-height: 28px;
+    letter-spacing: 2px;
+}
+
+.infoContainer .rightInfo h3 {
+    font-style: italic;
+    font-weight: 500;
+    opacity: .6;
+    font-size: 1.2rem;
+}
+
+.infoContainer .rightInfo .titleYear {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+}
+
+.titleYear h2 {
+    opacity: .6;
+    font-weight: 500;
+}
+
+@media screen and (max-width:751px) {
+    .infoContainer {
+        /* background-size: contain; */
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .infoContainer .leftImg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .infoContainer .rightInfo {
+        width: 100%;
+        gap: 10px;
+    }
+    .infoContainer .rightInfo .titleYear{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .infoContainer .rightInfo .overview{
+        max-width: none;
+        width: 100%;
+    }
+
+}

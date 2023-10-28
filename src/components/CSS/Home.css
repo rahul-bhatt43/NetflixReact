@@ -1,0 +1,248 @@
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner {
+    height: 500px;
+    background-color: black;
+    width: 30%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+.populardesc {
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 20%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: 10px;
+    font-size: 1.5rem;
+    right: 0;
+    left: 40%;
+    color: white;
+}
+
+.populardesc .btns {
+    display: flex;
+    gap: 10px;
+    /* border: 2px solid green; */
+
+}
+.populardesc .headTitle{
+    -webkit-text-stroke: 2px white;
+    letter-spacing: 2px;
+    color: transparent;
+}
+
+.populardesc .btns button {
+    padding: 8px 12px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+    border: none;
+    transition: .2s all ease-in-out;
+}
+
+.populardesc .btns button:hover {
+    opacity: .8;
+}
+
+.populardesc .btns button:focus-visible {
+    border: none;
+}
+
+.banner::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(180deg, transparent, transparent, black);
+    /* bottom: 28%; */
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+@media screen and (max-width:751px) {
+    .banner::before{
+        bottom: 0;
+    }
+    .banner {
+        width: 100%;
+    }
+
+    .populardesc .headTitle{
+        -webkit-text-stroke: none;
+        letter-spacing: 0;
+        color: white;
+    }
+
+    .populardesc {
+        top: 0;
+        left: 0;
+        justify-content: flex-end;
+        bottom: 20%;
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+.row {
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+.row h2{
+    position: relative;
+}
+
+.genrebx {
+    overflow-x: auto;
+    padding: 2rem;
+    background-color: black;
+    display: flex;
+    gap: 20px;
+}
+
+@media screen and (max-width:751px) {
+    .genrebx {
+        justify-content: center;
+        overflow-x: hidden;
+        flex-wrap: wrap;
+    }
+}
+
+.genrebx a {
+    position: relative;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    color: #ff1c0b;
+    border: 2px solid #ff1c0b;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.genrebx a::after {
+    border-radius: 10px;
+    position: absolute;
+    content: "";
+    inset: 0;
+    transform: scale(0);
+
+    transition: .2s all linear;
+}
+
+.genrebx a:hover::after {
+    background-color: #dc143c47;
+    transform: scale(1);
+    color: red;
+}
+
+.scrollme {
+    overflow-x: auto;
+}
+
+.card {
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.row div .card img {
+    width: 200px;
+    padding: .3rem;
+    transition: .3s all ease-in-out;
+    border-radius: 20px;
+    position: relative;
+}
+.row div a{
+    text-decoration: none;
+    color: white;
+}
+
+.row div .card .detailsM {
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    inset: 0 -20px 0px 0px;
+    transform: translateY(-100%) scale(0);
+    text-wrap: wrap;
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+
+    background: linear-gradient(180deg, transparent, black);
+
+    transition: .3s all linear;
+}
+
+.row div .card .detailsM .subDetail {
+    position: absolute;
+    width: 100%;
+    /* border: 2px solid; */
+    bottom: 5%;
+    /* margin-top: 30%; */
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+.card .detailsM .subDetail .ryear{
+    padding: 3px 5px;
+    border-radius: 8px;
+    background-color: #fbc02d;
+    color: black;
+    font-weight: 500;
+    font-size: 1.3rem;
+    outline: 2px solid white;
+}
+.card .detailsM .subDetail .ratingM{
+    padding: 2px 5px;
+    background-color: yellow;
+    font-weight: 500;
+    color: black;
+}
+
+.row div .card img:hover~.detailsM {
+    transform: translateY(0) scale(1);
+}
+
+.row div .card .detailsM:hover {
+    transform: translateY(0) scale(1);
+}
+
+.row div {
+    display: flex;
+    justify-content: flex-start;
+    padding: .5rem;
+
+}
+
+.row div .card {
+    position: relative;
+}
+
+.homegenre {
+    text-align: center;
+    background-color: black;
+    font-size: 3rem;
+    letter-spacing: 4px;
+}

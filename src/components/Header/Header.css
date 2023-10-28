@@ -1,0 +1,132 @@
+nav {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100%; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-wrap: wrap;
+    left: 0;
+
+    background-color: black;
+
+    z-index: 100;
+
+    @media screen and (max-width:751px) {
+        gap: 10px;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+nav .logo {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width:751px) {
+        width: 100%;
+    }
+}
+
+nav .menus {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.3rem;
+    flex-wrap: wrap;
+
+    @media screen and (max-width:751px) {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.menus a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: .3s all ease-in-out;
+
+    position: relative;
+}
+
+.menus a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 3px;
+    background-color: #ff1c0b;
+    transition: .2s all linear;
+}
+
+.menus a:hover::before {
+    width: 50%;
+}
+
+.menus a:hover {
+    color: #ff1c0b;
+}
+
+nav .logo a img {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    height: 60px;
+}
+
+.menus a.active {
+    color: #ff1c0b;
+}
+
+nav .search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+nav .search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    background-color: transparent;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+nav .search input:focus~button svg {
+    color: #ff1c0b;
+}
+
+.search button svg {
+    color: white;
+    transition: .3s all ease-in-out;
+}
+
+.search button svg:hover {
+    color: #ff1c0b;
+
+}
+
+nav .search input {
+    width: 80%;
+    padding: 4px 6px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: white;
+    border-bottom: 1.5px solid white;
+
+}
